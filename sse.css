@@ -1,9 +1,11 @@
+/* Reset básico */
 * {
     margin: 0px;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo geral do body */
 body {
     background-color: white;
     font-family: Arial, sans-serif;
@@ -11,6 +13,7 @@ body {
 }
 
 /*------------------------------------------- MENU PADRÃO -------------------------------------------*/
+/* Cabeçalho */
 header {
     display: flex;
     align-items: center;
@@ -19,26 +22,28 @@ header {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     color: white;
-    position: fixed;
+    position: fixed; /* Fixar o cabeçalho no topo da página */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 3; /* Sobrepõe o menu lateral */
 }
 
+/* Logo */
 .logo img {
     height: 50px;
     display: block;
     padding-left: 70px;
 }
 
+/* Ícone do menu lateral */
 #icone {
     cursor: pointer;
     padding: 15px;
     position: absolute;
     top: 5px;
     left: 10px;
-    z-index: 4;
+    z-index: 4; /* Certificar-se de que o ícone também está acima do menu lateral */
 }
 
 #icone img {
@@ -46,28 +51,32 @@ header {
     width: auto;
 }
 
+/* Checkbox oculto para o menu */
 #check {
     display: none;
 }
 
+/* Barra lateral */
 .barra {
     background-color: #ec1d1d;
-    height: 100vh;
-    width: 250px;
+    height: 100vh; /* Altura total da tela */
+    width: 250px; /* Largura da barra lateral */
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Escondida fora da tela inicialmente */
     transition: all 0.3s ease;
-    z-index: 2;
+    z-index: 2; /* Mantém abaixo do header */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Ao ativar o checkbox, mostrar a barra */
 #check:checked ~ .barra {
     left: 0;
 }
 
+/* Navegação da barra */
 nav {
-    margin-top: 60px;
+    margin-top: 60px; /* Espaço abaixo do cabeçalho */
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -93,6 +102,7 @@ nav a {
     color: white;
 }
 
+/* Transição suave dos itens do menu */
 .link {
     opacity: 0;
     transform: translateY(20px);
@@ -105,6 +115,7 @@ nav a {
     transition-delay: 0.07s;
 }
 
+/* Links horizontais do cabeçalho (caso use no futuro) */
 .menu-list {
     list-style: none;
     display: flex;
@@ -132,7 +143,8 @@ nav a {
 }
 /*----------------------------------------- FIM MENU PADRÃO -----------------------------------------*/
 
-/*-------------------------------------- TABELAS ------------------------------------------*/
+/*-------------------------------------- TABELA DE TURMAS ------------------------------------------*/
+/* Estilo para a seção da tabela */
 .tabela {
     padding-top: 80px;
     text-align: center;
@@ -140,28 +152,31 @@ nav a {
     padding-right: 20px;
 }
 
+/* Título da tabela */
 .tituloLista {
     font-size: 35px;
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: black; /* Vermelho padrão */
     margin-bottom: 20px;
 }
 
+/* Estilo geral da tabela */
 .tabela table {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
     border-collapse: collapse;
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f4f4f9; /* Fundo claro padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Garantir que bordas arredondadas funcionem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
 }
 
+/* Cabeçalho da tabela */
 .tabela thead {
-    background-color: #ec1d1d !important;
-    color: white;
+    background-color: #ec1d1d !important; /* Vermelho padrão */
+    color: white; /* Texto branco */
 }
 
 .tabela thead th {
@@ -171,32 +186,40 @@ nav a {
     text-align: center;
 }
 
+/* Linhas do corpo da tabela */
 .tabela tbody tr {
     text-align: center;
     font-size: 16px;
     color: #333;
-    transition: background-color 0.07s ease;
+    transition: background-color 0.07s ease; /* Suavizar a transição de hover */
 }
 
 .tabela tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Fundo cinza claro para linhas ímpares */
 }
 
 .tabela tbody tr:nth-child(even) {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Fundo branco para linhas pares */
 }
 
+/* Efeito hover para as linhas */
 .tabela tbody tr:hover {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* Cor clara ao passar o mouse */
     cursor: pointer;
 }
 
+/* Células de dados */
 .tabela td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
 }
 
+/* Bordas da tabela */
 .tabela th, .tabela td {
-    border: none;
+    border: none; /* Remove bordas externas */
+}
+
+.verde{
+    color: green;
 }
 /*-------------------------------------- FIM TABELA DE TURMAS ---------------------------------------*/
